@@ -18,7 +18,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+// category
 Route::get('category' ,  'Category\ApiCategoryController@index');
 Route::post('category/tambah' ,  'Category\ApiCategoryController@store');
 Route::put('category/{categories}' ,'Category\ApiCategoryController@update');
 Route::delete('category/{categories}' ,'Category\ApiCategoryController@delete');
+
+
+// note
+Route::get('note' ,  'Note\ApiNoteController@index');
+Route::post('note/tambah' ,  'Note\ApiNoteController@store');
