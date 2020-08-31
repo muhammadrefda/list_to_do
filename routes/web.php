@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 // category
 Route::get('category' , 'Category\WebCategoryController@index');
 Route::get('category/{id}/edit' , 'Category\WebCategoryController@edit');
