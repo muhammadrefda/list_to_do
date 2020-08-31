@@ -13,7 +13,7 @@
       <hr class="sidebar-divider my-0">
      
       <div class="user-image text-center mt-2 mb-2 ">
-      <img src="#" class="rounded-circle" alt="profile" style="width:100px;height:100px;">
+      <img src="{{ asset('wp-list/image/'. auth()->user()->image ) }}" class="rounded-circle" alt="profile" style="width:100px;height:100px;">
       <h4 class="text-white">{{ auth()->user()->name }}</h4>
       </div>
      
