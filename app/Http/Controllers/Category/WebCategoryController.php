@@ -20,4 +20,24 @@ class WebCategoryController extends Controller
         return view('category.edit' , ['categories' => $categories]);
     }
 
+
+    public function update(Request $request ,$id){
+        $request->validate([
+            'name' => "required"
+        ]);
+
+        $categories = Category::find($id);
+        $categories->update($request->all());
+
+        return redirect('/category')->with('success' , 'Data berhasil di Update');
+    }
+
+
+
+
+    public function delete($id){
+        Category::destroy($id);
+        return redirect('/category')->with('success' , 'Data berhasil di hapus');
+    }
+
 }
