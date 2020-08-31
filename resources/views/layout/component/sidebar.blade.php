@@ -28,6 +28,16 @@
       </li>
 
 
+      <hr class="sidebar-divider my-0">
+
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/category">
+          <i class="fas fa-fw fa-caret-down"></i>
+          <span>Category</span></a>
+      </li>
+
 
 
 
