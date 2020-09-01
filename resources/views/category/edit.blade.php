@@ -14,7 +14,14 @@
             <label for="name">name</label>
             <input type="text" class="form-control" id="name" name="name" value="{{ $categories->name}}">
         </div>
-           <button type="submit" class="btn btn-success text-center">Update</button>
+
+
+
+        <div class="button mt-5 text-center">
+                    <a href="/category" class="btn btn-primary"><i class="fas fa-arrow-circle-left"></i></a>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-user-edit"> Update</i></button>
+       </div>
+    
         </form>
         </div>
 

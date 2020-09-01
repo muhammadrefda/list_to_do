@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth']] ,function(){
 
 // category
 Route::get('category' , 'Category\WebCategoryController@index');
+Route::post('category/tambah' , 'Category\WebCategoryController@store');
 Route::get('category/{id}/edit' , 'Category\WebCategoryController@edit');
 Route::patch('category/{id}' , 'Category\WebCategoryController@update');
 Route::delete('category/{id}' , 'Category\WebCategoryController@delete');

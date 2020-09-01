@@ -15,6 +15,19 @@ class WebCategoryController extends Controller
     }
 
 
+
+    public function store(Request $request , Category $categories){
+        $request->validate([
+            'name' => "required"
+        ]);
+
+        $categories->create($request->all());
+        return redirect('/category')->with('success' , 'Data Berhasil di Input');
+        
+    }
+
+
+
     public function edit($id){
         $categories = Category::find($id);
         return view('category.edit' , ['categories' => $categories]);
