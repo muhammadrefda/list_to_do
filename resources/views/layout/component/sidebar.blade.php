@@ -28,6 +28,18 @@
       </li>
 
 
+
+      <hr class="sidebar-divider my-0">
+
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/datauser">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Users</span></a>
+        </li>
+
+
       <hr class="sidebar-divider my-0">
 
 

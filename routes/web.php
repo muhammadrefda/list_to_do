@@ -24,6 +24,10 @@ Route::group(['middleware' => ['auth']] ,function(){
 
  Route::get('/home', 'HomeController@index')->name('home');
 
+
+    //users
+Route::get('/datauser' , 'User\WebUserController@index');
+
 // category
 Route::get('category' , 'Category\WebCategoryController@index');
 Route::post('category/tambah' , 'Category\WebCategoryController@store');
