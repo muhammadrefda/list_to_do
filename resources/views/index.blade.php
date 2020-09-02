@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ListToDo</title>
     <link href="{{asset('css/styles.css')}}" rel="stylesheet">
-
+    <link href="{{asset('wp-list/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
     
