@@ -134,6 +134,13 @@ nav .logo-nav {
 
 
 /* list Category */
+#list-category,
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: rgb(83, 80, 255);
+}
+
 #list-category ul li {
     list-style: none;
 }
