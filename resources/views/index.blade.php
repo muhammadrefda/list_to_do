@@ -40,6 +40,9 @@
             </div>
 
 
+        <div id="list-category" class="row"></div>
+
+
     </div>
 
 
@@ -53,5 +56,6 @@
     </footer>
 
 <script src="{{ asset('js/ltd-script.js') }}"></script>
+<script> main(); </script>
 </body>
 </html>
