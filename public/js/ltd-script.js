@@ -71,7 +71,9 @@ const main = () => {
 
     const removeCategory = (categoryId) => {
 
-        fetch(`${baseUrl}/category/${categoryId}`)
+        fetch(`${baseUrl}/category/${categoryId}`, {
+                method: 'DELETE'
+            })
             .then(response => {
                 return response.json();
             })
