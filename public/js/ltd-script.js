@@ -78,13 +78,18 @@ const main = () => {
                 return response.json();
             })
             .then(responseJson => {
-                console.log(`${responseJson.message}`);
+                messageError(responseJson.message)
                 getCategory();
             })
-            .catch((error = "error") => {
-                console.log(error);
+            .catch(error => {
+                messageError(error);
             })
     };
+
+
+    const messageError = (message = 'error') => {
+        alert(message)
+    }
 
     getCategory();
 

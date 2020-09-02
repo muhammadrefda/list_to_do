@@ -111,7 +111,8 @@ nav .logo-nav {
 .main {
     padding-top: 120px;
     text-align: center;
-    height: 400px;
+    height: auto;
+    margin-bottom: 50px;
 }
 
 
