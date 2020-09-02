@@ -153,6 +153,7 @@ h3 {
     text-align: left;
     border-radius: 1rem;
     height: 30px;
+    font-size: 20px;
 }
 
 #list-category ul li:hover {
