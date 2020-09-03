@@ -53,7 +53,8 @@ const main = () => {
                     </div>
 
                         <div class="action">
-                        <span type="button" class="button-delete" ><i class="fas fa-minus-circle" id="${category.id}"></i></span> 
+                        <span type="button" class="button-delete" ><i class="fas fa-minus-circle" id="${category.id}"></i></span>
+                        <span type="button" class="button-update" ><i class="fas fa-edit" id="${category.id}"></i></span>
                         </div> 
                     </ul>
                              
@@ -61,13 +62,22 @@ const main = () => {
             `
         });
 
-        const buttons = document.querySelectorAll(".button-delete");
-        buttons.forEach(button => {
-            button.addEventListener("click", event => {
+        const buttonDelete = document.querySelectorAll(".button-delete");
+        buttonDelete.forEach(button => {
+            button.addEventListener("click", (event) => {
                 const categoryId = event.target.id;
                 removeCategory(categoryId);
             })
         });
+
+
+        const buttonUpdate = document.querySelectorAll('.button-update');
+        buttonUpdate.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const categoryId = event.target.id;
+                alert(categoryId);
+            })
+        })
 
     }
 
