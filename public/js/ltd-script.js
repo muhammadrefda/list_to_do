@@ -19,7 +19,6 @@ const main = () => {
 
 
     // get item
-
     const getCategory = () => {
         fetch(`${baseUrl}/category`)
             .then(response => {
@@ -40,7 +39,6 @@ const main = () => {
 
 
     // render item
-
     const renderCategory = (category) => {
         let elementCategory = document.querySelector('#list-category');
 
@@ -76,8 +74,6 @@ const main = () => {
 
 
     // insert
-
-
     const insertCategory = (category) => {
 
         fetch(`${baseUrl}/category/tambah`, {
@@ -108,9 +104,11 @@ const main = () => {
 
 
 
+
+    // loaded
     document.addEventListener('DOMContentLoaded', () => {
         const buttonSend = document.querySelector('#input-button');
-        const inputCategory = document.querySelector('#input-category');
+        const inputCategory = document.getElementById('input-category');
 
         buttonSend.addEventListener('click', () => {
 
@@ -122,6 +120,23 @@ const main = () => {
 
         });
 
+
+
+
+        inputCategory.addEventListener('keyup', (event) => {
+
+            if (event.which == 13) {
+
+                const category = {
+                    name: inputCategory.value
+                }
+
+                insertCategory(category);
+            }
+        })
+
+
+
         getCategory();
     })
 
@@ -130,7 +145,6 @@ const main = () => {
 
 
     // remove
-
     const removeCategory = (categoryId) => {
 
         fetch(`${baseUrl}/category/${categoryId}`, {
@@ -156,6 +170,7 @@ const main = () => {
 
 
 
+    // message
     const messageError = (message = 'error') => {
         console.log(message);
     }
