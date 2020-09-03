@@ -91,8 +91,12 @@ const main = () => {
                 return response.json();
             })
             .then(responseJson => {
-                console.log(`sucess ${responseJson.message}`);
-                getCategory();
+                if (responseJson.error) {
+                    messageError(responseJson.message)
+                } else {
+                    console.log('success');
+                    getCategory();
+                }
             })
             .catch(error => {
                 messageError(error);
