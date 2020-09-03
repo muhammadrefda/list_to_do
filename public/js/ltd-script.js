@@ -16,6 +16,10 @@ const main = () => {
 
     const baseUrl = `http://127.0.0.1:8000/api`;
 
+
+
+    // get item
+
     const getCategory = () => {
         fetch(`${baseUrl}/category`)
             .then(response => {
@@ -35,6 +39,7 @@ const main = () => {
 
 
 
+    // render item
 
     const renderCategory = (category) => {
         let elementCategory = document.querySelector('#list-category');
@@ -50,7 +55,7 @@ const main = () => {
                     </div>
 
                         <div class="action">
-                        <span type="button" class="button-delete" id="${category.id}"><i class="fas fa-minus-circle"></i></span> 
+                        <span type="button" class="button-delete" ><i class="fas fa-minus-circle" id="${category.id}"></i></span> 
                         </div> 
                     </ul>
                              
@@ -69,10 +74,66 @@ const main = () => {
     }
 
 
+
+    // insert
+
+
+    const insertCategory = (category) => {
+
+        fetch(`${baseUrl}/category/tambah`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(category)
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(responseJson => {
+                console.log(`sucess ${responseJson.message}`);
+                getCategory();
+            })
+            .catch(error => {
+                messageError(error);
+            })
+
+
+
+    }
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttonSend = document.querySelector('#input-button');
+        const inputCategory = document.querySelector('#input-category');
+
+        buttonSend.addEventListener('click', () => {
+
+            const category = {
+                name: inputCategory.value
+            }
+
+            insertCategory(category);
+
+        });
+
+        getCategory();
+    })
+
+
+
+
+
+    // remove
+
     const removeCategory = (categoryId) => {
 
         fetch(`${baseUrl}/category/${categoryId}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
             .then(response => {
                 return response.json();
@@ -87,8 +148,12 @@ const main = () => {
     };
 
 
+
+
+
+
     const messageError = (message = 'error') => {
-        alert(message)
+        console.log(message);
     }
 
     getCategory();

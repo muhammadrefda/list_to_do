@@ -34,7 +34,7 @@
 
             <div class="input-list">
             
-                <input type="search" id="search-input" placeholder="Input">
+                <input type="search" id="input-category" placeholder="input">
                 <button id="input-button"type="submit">Send</button>
 
             </div>
